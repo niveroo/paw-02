@@ -94,43 +94,43 @@
 
   cw3.addEventListener("click", function () {
     //////   1   //////
-    const dialog = document.getElementById('modal')
-    dialog.showModal();
-
-    fetch('https://my-json-server.typicode.com/niveroo/paw-02/posts/1')
-      .finally(()=>dialog.close())
-      .then(response => response.json())
-      .then(post => {
-        let postContent = `
-          <h3>${post.title}</h3>  <!-- Tytuł postu -->
-          <p>${post.body}</p>     <!-- Treść postu -->
-        `;
-        console.log(post)
-        answer.innerHTML = postContent;
-      }) 
-
-    //////   2   //////
     // const dialog = document.getElementById('modal')
     // dialog.showModal();
 
-    // fetch('https://my-json-server.typicode.com/niveroo/paw-02/posts')
-    // .finally(()=>dialog.close())
-    // .then(response => response.json())
-    // .then(array => {
-      
-    //   let postList = '<ul>';
-      
-    //   array.forEach(post => {
-    //     postList += `
-    //       <li>
-    //         <h3>${post.title}</h3>  <!-- Tytuł postu -->
-    //         <p>${post.body}</p>     <!-- Treść postu -->
-    //       </li>
+    // fetch('https://my-json-server.typicode.com/niveroo/paw-02/posts/1')
+    //   .finally(()=>dialog.close())
+    //   .then(response => response.json())
+    //   .then(post => {
+    //     let postContent = `
+    //       <h3>${post.title}</h3>  <!-- Tytuł postu -->
+    //       <p>${post.body}</p>     <!-- Treść postu -->
     //     `;
-    // });
-    // postList += '</ul>';
-    // answer.innerHTML = postList; 
-    // })
+    //     console.log(post)
+    //     answer.innerHTML = postContent;
+    //   }) 
+
+    //////   2   //////
+    const dialog = document.getElementById('modal')
+    dialog.showModal();
+
+    fetch('https://my-json-server.typicode.com/niveroo/paw-02/posts')
+    .finally(()=>dialog.close())
+    .then(response => response.json())
+    .then(array => {
+      
+      let postList = '<ul>';
+      
+      array.forEach(post => {
+        postList += `
+          <li>
+            <h3>${post.title}</h3>  <!-- Tytuł postu -->
+            <p>${post.body}</p>     <!-- Treść postu -->
+          </li>
+        `;
+    });
+    postList += '</ul>';
+    answer.innerHTML = postList; 
+    })
 
   })
 
