@@ -96,7 +96,7 @@
     const dialog = document.getElementById('modal')
     dialog.showModal();
 
-    fetch('https://my-json-server.typicode.com/niveroo/')
+    fetch('https://my-json-server.typicode.com/niveroo/paw-02/posts/1')
       .finally(()=>dialog.close())
       .then(response => response.json())
       .then(post => {
